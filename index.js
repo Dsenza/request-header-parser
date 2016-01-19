@@ -27,8 +27,8 @@ app.get('/db', function (request, response) {
 })
 
 app.get('/api/whoami', function (req, res) {
-	userAgent = req.headers["user-agent"]
-	os = /\(.*?\)/.exec(userAgent)[0]
+	var userAgent = req.headers["user-agent"]
+	var os = /\(.*?\)/.exec(userAgent)[0]
 
 	var whoami = {
 		ip: req.ip.substring(7),
