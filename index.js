@@ -36,10 +36,13 @@ app.get('/db', function (request, response) {
 })
 
 app.get('/api/whoami', function (req, res) {
+	userAgent = req.headers["user-agent"]
+	os = /\(.*\)/.exec(userAgent)[0]
+
 	var whoami = {
 		ip: req.ip.substring(7) || 'Nothing',
 		language: req.headers['accept-language'].split(',')[0] || 'Nothing',
-		OS: "Something"
+		OS: os
 	};
 	console.log(whoami);
 	res.send(req.headers);
