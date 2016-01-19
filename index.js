@@ -1,29 +1,56 @@
 var express = require('express');
+var timestamp = require('./public/scripts/timestamp.js')
+
 var app = express();
-var pg = require('pg');
 
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.get('/api/', function (req, res) {
+	var options = {
+		root: __dirname + '/public/',
+		dotfiles: 'deny',
+		headers: {
+			'x-timestamp': Date.now(),
+			'x-sent': true
+		}
+	};
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
+	res.sendFile('api.html', options, function (err) {
+		if (err) {
+			console.error(err);
+			res.status(err).end();
+		} else {
+			console.log('Sent file')
+		}
+	})
+})
 
-app.get('/db', function (request, response) {
-	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-		client.query('SELECT * FROM test_table', function (err, result) {
-			done();
-			if (err)
-				{ console.error(err); response.send("Error " + err); }
-			else
-				{ response.render('pages/db', {results: result.rows} ); }
-		});
-	});
+app.get('/api/timestamp', function (req, res) {
+	var options = {
+		root: __dirname + '/public/',
+		dotfiles: 'deny',
+		headers: {
+			'x-timestamp': Date.now(),
+			'x-sent': true
+		}
+	};
+
+	res.sendFile('timestamp.html', options, function (err) {
+		if (err) {
+			console.error(err);
+			res.status(err).end();
+		} else {
+			console.log('Sent file')
+		}
+	})
+})
+
+app.get('/api/timestamp/:QUERY', function (req, res) {
+	var dateQuery = req.params.QUERY;
+	var dateResponse = timestamp.createTimeObj(dateQuery);
+	res.json(dateResponse);
 })
 
 app.get('/api/whoami', function (req, res) {
@@ -36,6 +63,14 @@ app.get('/api/whoami', function (req, res) {
 		OS: os.slice(1, -1)
 	};
 	res.json(whoami);
+});
+
+app.get('/api/whereami', function (req, res) {
+	if(req.query.geo) {
+		var location = {lat: req.query.lat, lon: req.query.lon}
+		res.json(location);
+		console.log(location)
+	} else res.send("No Location")
 });
 
 app.listen(app.get('port'), function() {

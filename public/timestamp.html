@@ -1,0 +1,27 @@
+<html lang="en">
+	<head>
+		<title> Timestamp microservice</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="header">
+				API Basejump: Timestamp microservice
+			</h1>
+			<blockquote>
+				<ul>1) Pass a string as a parameter to this website.</ul>
+				<ul>2) The website will determine if the string parameter contains a unix time stamp or a
+					natural language formatted date.</ul>
+				<ul>3) The website will return both the unix timestamp and the natural language form if a proper 
+					string was passed.</ul>
+				<ul>4) If the string wasn't a date the website returns null for both properties</ul>
+			</blockquote>
+			<h3>Example usage:</h3>
+			<code>localhost:3000/1450137600</code><br/>
+			<code>localhost:3000/December%2015,%202015</code><br/>
+			<h3>Links</h3>
+			<a href="localhost:3000/12 20 34">Click me!</a>
+		</div>
+	</body>
+</html>

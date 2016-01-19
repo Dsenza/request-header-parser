@@ -1,0 +1,42 @@
+header {
+  background-color: darkgreen;
+  height: 75px;
+}
+
+.nav {
+  margin-right: 20px;
+}
+
+#content {
+  margin-top: 100px;
+}
+
+.fcclogo {
+  height: 100%;
+}
+
+.userImg {
+  max-width: 50px;
+  max-height: 50px;
+  border: 2px solid;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.camperRow{
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+  
+table.table-striped {
+  background-color: #f0f0f0;
+  color: #333;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-collapse: inherit;
+  border: 1px solid #351f0b;
+}
+  
+#tableHeader {
+  text-align: center;
+}
