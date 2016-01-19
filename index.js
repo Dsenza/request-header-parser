@@ -14,15 +14,6 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/cool', function(request, response) {
-	var result = ''
-	var times = process.env.TIMES || 5
-	for (i=0; i < times; i++) {
-		result += cool();
-	}
-	response.send(result);
-});
-
 app.get('/db', function (request, response) {
 	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 		client.query('SELECT * FROM test_table', function (err, result) {
