@@ -44,8 +44,7 @@ app.get('/api/whoami', function (req, res) {
 		language: req.headers['accept-language'].split(',')[0],
 		OS: os.slice(1, -1)
 	};
-	console.log(whoami);
-	res.send(req.headers);
+	res.json(whoami);
 });
 
 app.listen(app.get('port'), function() {
