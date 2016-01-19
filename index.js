@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var cool = require('cool-ascii-faces');
 var pg = require('pg');
 
 app.set('port', (process.env.PORT || 5000));
@@ -35,6 +34,16 @@ app.get('/db', function (request, response) {
 		});
 	});
 })
+
+app.get('/api/whoami', function (req, res) {
+	var whoami = {
+		ip: req.ip.substring(7) || 'Nothing',
+		language: req.headers['accept-language'].split(',')[0] || 'Nothing',
+		OS: "Something"
+	};
+	console.log(whoami);
+	res.send(req.headers);
+});
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
