@@ -7,7 +7,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/api/', function (req, res) {
+/*app.get('/api/', function (req, res) {
 	var options = {
 		root: __dirname + '/public/',
 		dotfiles: 'deny',
@@ -25,33 +25,15 @@ app.get('/api/', function (req, res) {
 			console.log('Sent file')
 		}
 	})
-})
+})*/
 
-app.get('/api/timestamp', function (req, res) {
-	var options = {
-		root: __dirname + '/public/',
-		dotfiles: 'deny',
-		headers: {
-			'x-timestamp': Date.now(),
-			'x-sent': true
-		}
-	};
-
-	res.sendFile('timestamp.html', options, function (err) {
-		if (err) {
-			console.error(err);
-			res.status(err).end();
-		} else {
-			console.log('Sent file')
-		}
-	})
-})
-
-app.get('/api/timestamp/:QUERY', function (req, res) {
-	var dateQuery = req.params.QUERY;
-	var dateResponse = timestamp.createTimeObj(dateQuery);
-	res.json(dateResponse);
-})
+app.get('/api/whereami', function (req, res) {
+	if(req.query.geo) {
+		var location = {lat: req.query.lat, lon: req.query.lon}
+		res.json(location);
+		console.log(location)
+	} else res.send("No Location")
+});
 
 app.get('/api/whoami', function (req, res) {
 	var userAgent = req.headers["user-agent"]
@@ -65,13 +47,32 @@ app.get('/api/whoami', function (req, res) {
 	res.json(whoami);
 });
 
-app.get('/api/whereami', function (req, res) {
-	if(req.query.geo) {
-		var location = {lat: req.query.lat, lon: req.query.lon}
-		res.json(location);
-		console.log(location)
-	} else res.send("No Location")
-});
+app.get('/:FILENAME', function (req, res) {
+	var filename = req.params.FILENAME + '.html'
+	var options = {
+		root: __dirname + '/public/',
+		dotfiles: 'deny',
+		headers: {
+			'x-timestamp': Date.now(),
+			'x-sent': true
+		}
+	};
+
+	res.sendFile(filename, options, function (err) {
+		if (err) {
+			console.error(err);
+			res.status(err).end();
+		} else {
+			console.log('Sent: ' + filename)
+		}
+	})
+})
+
+app.get('/timestamp/:QUERY', function (req, res) {
+	var dateQuery = req.params.QUERY;
+	var dateResponse = timestamp.createTimeObj(dateQuery);
+	res.json(dateResponse);
+})
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
