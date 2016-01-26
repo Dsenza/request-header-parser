@@ -4,6 +4,7 @@ html
 		block head
 		title My Site
 		meta(charset="utf-8")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/scripts/main.js')
 
@@ -25,9 +26,12 @@ html
 					li.about: a(href="#") About
 					li.contact: a(href="#") Contact
 		.container
-			.main-content
-				block content
-			.sidebar
-				block sidebar
+			block main
+				.row
+					.main-content.col-sm-8
+						block content
+					.sidebar.col-sm-4
+						block sidebar
 		footer
-			p Running on node with Express, Jade, and Stylus
+			block footer
+			p Website running on node with Express, Jade, and Stylus

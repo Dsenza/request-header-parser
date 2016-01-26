@@ -49,20 +49,12 @@ header .nav a:hover {
   }
 }
 .container {
-  width: 500px;
+  width: 700px;
   margin: 50px auto;
   overflow: hidden;
 }
-.main-content {
-  float: left;
-  width: 300px;
-}
 .main-content p {
   margin-bottom: 20px;
-}
-.sidebar {
-  float: left;
-  width: 200px;
 }
 .sidebar .widget {
   border-radius: 3px;
@@ -115,4 +107,29 @@ table.table-striped {
 }
 #tableHeader {
   text-align: center;
+}
+table,
+th,
+td {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+table {
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+}
+.trash {
+  text-alight: right;
+}
+.searchForm {
+  margin-bottom: 4px;
+}
+.addMovieForm {
+  margin-top: 4px;
+}
+.addMovieTextBox {
+  margin-right: 3px;
 }
