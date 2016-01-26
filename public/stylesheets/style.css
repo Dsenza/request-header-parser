@@ -1,0 +1,118 @@
+@import url("http://fonts.googleapis.com/css?family=Quicksand");
+body {
+  font-family: 'Georgia';
+  background-color: #faf9f0;
+  color: #444;
+}
+header {
+  font-family: 'Quicksand';
+  padding: 50px 10px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  background-color: #fa5b4d;
+  border-bottom: 1px solid #df1806;
+  text-shadow: 0px -1px 0px #df1806;
+  position: fixed 0 0;
+}
+header .nav ul {
+  list-style: none;
+  background-color: #fa5b4d;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+header .nav li {
+  font-family: 'Quicksand';
+  font-size: 1.2em;
+  line-height: 40px;
+  border-bottom: 1px solid #df1806;
+}
+header .nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: 0.3s #df1806;
+}
+header .nav a:hover {
+  background-color: #9f1104;
+}
+@media screen and (min-width: 600px) {
+  header .nav li {
+    width: 150px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    margin-right: -4px;
+  }
+}
+.container {
+  width: 500px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+.main-content {
+  float: left;
+  width: 300px;
+}
+.main-content p {
+  margin-bottom: 20px;
+}
+.sidebar {
+  float: left;
+  width: 200px;
+}
+.sidebar .widget {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  background-color: #faf9f0;
+  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+}
+.sidebar h1 {
+  font-family: 'Quicksand';
+  margin: 13px 10px 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ddd;
+  border-radius: 2px 2px 0px 0px;
+  margin-bottom: 10px;
+}
+.sidebar p {
+  font-size: 13px;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
+p {
+  line-height: 1.8;
+}
+footer {
+  width: 500px;
+  margin: 50px auto;
+  border-top: 1px dotted #ccc;
+  padding-top: 5px;
+  font-size: 13px;
+}
+.userImg {
+  max-width: 50px;
+  max-height: 50px;
+  border: 2px solid;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.camperRow {
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+table.table-striped {
+  background-color: #f0f0f0;
+  color: #333;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-collapse: inherit;
+  border: 1px solid #351f0b;
+}
+#tableHeader {
+  text-align: center;
+}

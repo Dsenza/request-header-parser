@@ -1,13 +1,17 @@
 {
   "name": "request-header-parser",
   "version": "0.1.5",
+  "private": "true",
   "description": "A simple backend API to parse the user's request header",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "jade": "^1.11.0",
+    "nib": "^1.1.0",
+    "stylus": "^0.53.0"
   },
   "engines": {
     "node": "0.12.7"
