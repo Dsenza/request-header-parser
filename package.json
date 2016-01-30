@@ -1,28 +1,29 @@
 {
-  "name": "node-js-getting-started",
+  "name": "request-header-parser",
   "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
+  "private": "true",
+  "description": "A simple backend API to parse the user's request header",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "ejs": "2.3.3",
     "express": "4.13.3",
-    "cool-ascii-faces": "~1.3.x",
-    "pg": "4.x"
+    "jade": "^1.11.0",
+    "nib": "^1.1.0",
+    "stylus": "^0.53.0"
   },
   "engines": {
     "node": "0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/Dsenza/request-header-parser"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": ""
 }
