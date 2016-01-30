@@ -1,0 +1,16 @@
+extend layout
+block main
+	.container
+		h1.header API Challenge: Timestamp Microservice
+		blockquote
+			ul
+				li Pass a string as a parameter to this website
+				li The website will determine if the parameter contains a unix time stamp or a natural language date
+				li 
+					|The website will return a JSON object containing both a 
+					|UNIX timestamp and the natural language date
+				li If the parameter was not a date the website returns null for both properties
+		h3 Example Usage
+		code devindescenza.me/api/timestamp/1450137600
+		br
+		code devindescenza.me/api/timestamp/December%2015,%202015  

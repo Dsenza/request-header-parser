@@ -30,25 +30,6 @@ app.use(stylus.middleware({
 app.use(express.static(__dirname + '/public'));
 
 
-/*app.get('/api/', function (req, res) {
-	var options = {
-		root: __dirname + '/public/',
-		dotfiles: 'deny',
-		headers: {
-			'x-timestamp': Date.now(),
-			'x-sent': true
-		}
-	};
-
-	res.sendFile('api.html', options, function (err) {
-		if (err) {
-			console.error(err);
-			res.status(err).end();
-		} else {
-			console.log('Sent file')
-		}
-	})
-})*/
 app.get('/', function (req, res) {
 	res.render('index')
 })
@@ -75,7 +56,7 @@ app.get('/api/whoami', function (req, res) {
 
 app.get('/:LOCATION', function (req, res) {
 	var location = req.params.LOCATION
-	res.render(location, function(err, html) {
+	res.render(location, function (err, html) {
 		if(err) {
 			res.render('error', {error: err})
 			console.log(err)
@@ -84,29 +65,18 @@ app.get('/:LOCATION', function (req, res) {
 	})
 })
 
-/*
-app.get('/:FILENAME', function (req, res) {
-	var filename = req.params.FILENAME + '.html'
-	var options = {
-		root: __dirname + '/public/',
-		dotfiles: 'deny',
-		headers: {
-			'x-timestamp': Date.now(),
-			'x-sent': true
-		}
-	};
 
-	res.sendFile(filename, options, function (err) {
-		if (err) {
-			console.error(err);
-			res.status(err).end();
-		} else {
-			console.log('Sent: ' + filename)
+app.get('/api/timestamp', function (req, res) {
+	res.render('timestamp', function (err, html) {
+		if(err) {
+			res.render('error', {error: err})
+			console.log(err)
 		}
+		res.send(html)
 	})
 })
-*/
-app.get('/timestamp/:QUERY', function (req, res) {
+
+app.get('/api/timestamp/:QUERY', function (req, res) {
 	var dateQuery = req.params.QUERY;
 	var dateResponse = timestamp.createTimeObj(dateQuery);
 	res.json(dateResponse);

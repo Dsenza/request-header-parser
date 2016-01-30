@@ -1,0 +1,13 @@
+extend layout
+block main
+	h3 React
+	ul
+		li: a(href="/leaderboard") FreeCodeCamp points leaderboard
+		li: a(href="/movielist") Local storage movie list
+	h3 Micro API Services
+	ul
+		li: a(href="/api/whereami" id="whereami") GPS Location
+		li: a(href="/api/whoami") Request header parser
+		li: a(href="/api/timestamp") Timestamp API
+
+	script(src="/scripts/geolocation.js")

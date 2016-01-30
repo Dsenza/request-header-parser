@@ -133,3 +133,12 @@ td {
 .addMovieTextBox {
   margin-right: 3px;
 }
+.config {
+  text-align: left;
+}
+.social {
+  text-align: right;
+}
+.fa {
+  margin-right: 2px;
+}
