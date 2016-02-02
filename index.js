@@ -5,6 +5,7 @@ var routes = require('./routes');
 var path = require('path');
 var mongoose = require('mongoose');
 var timestamp = require('./public/scripts/timestamp.js');
+var User = require('./user.js')
 
 // Express middleware dependencies
 var stylus = require('stylus');
