@@ -62,7 +62,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(morgan('combined'));
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser({extended: true}));
 app.use(methodOverride());
 app.use(session({secret: 'yosemite'}));
 app.use(passport.initialize());
