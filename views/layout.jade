@@ -4,7 +4,6 @@ html
 		block head
 		title My Site
 		meta(charset="utf-8")
-		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/scripts/main.js')
@@ -20,27 +19,21 @@ html
 
 	body
 		header
-			h1 My Site
+			h1.title My Site
 			div.nav
 				ul
-					li.home: a(href="/") Home
-					li.about: a(href="#") About
-					li.projects: a(href="/projects") Projects
+					li: a(href="/") Home
+					li: a(href="#") About
+					li: a(href="/projects") Projects
 		.container
 			block main
-				.row
-					.main-content.col-sm-8
-						block content
-					.sidebar.col-sm-4
-						block sidebar
+				block content
 		footer
-			block footer
-			div.row
-				.col-sm-10.config Running on Node with Express, Jade, and Stylus
-				.col-sm-2.social
-					a(href="https://github.com/Dsenza/" target="_blank")
-						i.fa-github-square.fa
-					a(href="https://www.linkedin.com/in/dsenza" target="_blank")
-						i.fa-linkedin-square.fa
-					a(href="mailto:ddescenza@gmail.com")
-						i.fa-envelope.fa
+			div.config Running on Node with Express, Jade, and Stylus
+			div.social
+				a(href="https://github.com/Dsenza/" target="_blank")
+					i.fa-github-square.fa
+				a(href="https://www.linkedin.com/in/dsenza" target="_blank")
+					i.fa-linkedin-square.fa
+				a(href="mailto:ddescenza@gmail.com")
+					i.fa-envelope.fa

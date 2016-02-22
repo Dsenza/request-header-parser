@@ -38,7 +38,7 @@ var MovieRow = React.createClass({
         <td>{this.props.movie.title}</td>
         <td>{this.props.movie.genre}</td>
         <td>{actors}</td>
-        <td className="trash"><span className="glyphicon glyphicon-trash" onClick={this.handleDelete}></span></td>
+        <td className="trash"><i className="material-icons" onClick={this.handleDelete}>delete</i></td>
       </tr>
     );
   }

@@ -90,7 +90,7 @@ var CamperTable = React.createClass({
   componentDidMount: function() {
     this.loadDataFromServer();
   },
-  
+
   handleHeaderClick: function(setSortColumn) {
     this.setState({column: setSortColumn});
   },
