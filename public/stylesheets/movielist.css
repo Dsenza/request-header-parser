@@ -1,0 +1,23 @@
+table,
+td {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+table {
+  width: 100%;
+}
+i {
+  cursor: pointer;
+}
+.trash {
+  text-align: center;
+}
+.searchForm {
+  margin-bottom: 4px;
+}
+.addMovieForm {
+  margin-top: 4px;
+}
+.addMovieTextBox {
+  margin-right: 3px;
+}

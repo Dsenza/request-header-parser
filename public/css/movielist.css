@@ -36,7 +36,10 @@ th, td {
 }
 
 .trash {
-  text-alight: right;
+  text-align: right;
+  :hover
+    cursor: pointer;
+    ;
 }
 
 .searchForm {
