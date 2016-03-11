@@ -11,6 +11,7 @@ class Projects extends React.Component {
         <ul>
           <li><Link to="/leaderboard">FreeCodeCamp points leaderboard</Link></li>
           <li><Link to="/movielist">Local storage movie list</Link></li>
+          <li><Link to="/test">Test React app</Link></li>
         </ul>
         <h3>Micro API Services</h3>
         <ul>
