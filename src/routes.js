@@ -8,6 +8,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import CamperTableContainer from './containers/CamperTableContainer';
 import CounterContainer from './containers/CounterContainer';
+import MovieListApp from './containers/MovieListApp';
 
 module.exports = (
   <Route path='/' component={App}>
@@ -15,6 +16,7 @@ module.exports = (
     <Route path="/about" component={About}/>
     <Route path="/projects" component={Projects}/>
     <Route path="/leaderboard" component={CamperTableContainer}/>
+    <Route path ="/movielist" component={MovieListApp}/>
     <Route path="/test" component={CounterContainer}/>
   </Route>
 )
